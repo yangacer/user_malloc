@@ -8,7 +8,7 @@ cd build
 cmake ..
 make install
 
-gcc -o your_c_prog your_c_prog.c -luser_malloc
+gcc -o your_c_prog your_c_prog.c -luser_malloc 
 g++ -o your_cpp_prog your_cpp_prog.cpp -luser_mallc
 
 ./your_c_prog
@@ -19,7 +19,7 @@ g++ -o your_cpp_prog your_cpp_prog.cpp -luser_mallc
 
 ```
 g++ -fpic -c user_malloc.cpp
-g++ -shared -o libuser_malloc.so user_malloc.o
+g++ -shared -o libuser_malloc.so user_malloc.o -ldl
 
 gcc -L./ -o your_c_prog your_c_prog.c -luser_malloc
 g++ -L./ -o your_cpp_prog your_cpp_prog.cpp -luser_mallc
